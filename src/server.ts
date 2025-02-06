@@ -1,5 +1,4 @@
 import https from "https";
-import cors from 'cors';
 import { config } from "dotenv";
 
 import corsConfig from "./config/cors.js";
@@ -28,12 +27,6 @@ const ANIWATCH_API_HOSTNAME = process.env?.ANIWATCH_API_HOSTNAME;
 
 const app = new Hono<{ Variables: AniwatchAPIVariables }>();
 
-// Use CORS middleware globally
-app.use(cors({
-  origin: ['http://localhost:5173', 'http://yourfrontenddomain.com'], // List all domains that should be allowed to access the API
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  allowedHeaders: ['Content-Type', 'Authorization', 'Accept'],
-}));
 
 app.use(logger());
 app.use(corsConfig);
