@@ -24,7 +24,7 @@ LABEL org.opencontainers.image.licenses=MIT
 RUN addgroup -S aniwatch && adduser -S zoro -G aniwatch
 
 # set secure folder permissions
-RUN mkdir -p /app/public /app/dist && chown -R zoro:aniwatch /app
+RUN mkdir -p /app/public /app/dist /app/subtitles && chown -R zoro:aniwatch /app
 
 # set non-privileged user
 USER zoro
@@ -53,5 +53,3 @@ ENV PORT=4000
 EXPOSE 4000
 
 CMD [ "node", "dist/src/server.js" ]
-
-# exit
