@@ -1,5 +1,5 @@
 import https from "https";
-const cors = require("cors");
+import cors from "cors";
 import { config } from "dotenv";
 
 import corsConfig from "./config/cors.js";
