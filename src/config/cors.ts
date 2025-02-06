@@ -6,7 +6,7 @@ config(); // Load environment variables
 // Set up allowed origins from environment variable or default to localhost and "*" for wildcard
 const allowedOrigins = process.env.ANIWATCH_API_CORS_ALLOWED_ORIGINS
   ? process.env.ANIWATCH_API_CORS_ALLOWED_ORIGINS.split(",")
-  : ["https://animelord.vercel.app/", "http://localhost:5173/"];
+  : ["*"];
 
 // CORS configuration
 const corsConfig = {
